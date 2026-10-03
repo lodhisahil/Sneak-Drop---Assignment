@@ -9,8 +9,8 @@ const getProductById = async (productId) => {
     return result.rows[0];
 };
 
-const getAvailableStock = async (productId) => {
-    const result = await pool.query(
+const getAvailableStock = async (client, productId) => {
+    const result = await client.query(
         `SELECT available_stock
          FROM products
          WHERE id = $1`,

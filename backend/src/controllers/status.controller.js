@@ -49,6 +49,7 @@ const getSaleStatus = async (req, res) => {
 
         // Get available stock
         const product = await getAvailableStock(
+            client,
             productId
         );
 
